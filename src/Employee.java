@@ -72,5 +72,13 @@ public class Employee {
     public String getName(){
         return name;
     }
-    public double getPay
+    public double getPay(){
+        double pay;
+        boolean noovertime = (hours<=40 || type==2);
+        if(noovertime)
+            pay=rate*hours;
+        else
+            pay = (hours-40)*(rate*2)+rate*40;
+        return pay;
+    }
 }
